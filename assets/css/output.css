@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -286,11 +287,20 @@
   .w-full {
     width: 100%;
   }
+  .max-w-0 {
+    max-width: calc(var(--spacing) * 0);
+  }
+  .max-w-0\.5 {
+    max-width: calc(var(--spacing) * 0.5);
+  }
   .max-w-full {
     max-width: 100%;
   }
   .flex-1 {
     flex: 1;
+  }
+  .basis-\[16\%\] {
+    flex-basis: 16%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -298,8 +308,17 @@
   .resize {
     resize: both;
   }
+  .auto-cols-max {
+    grid-auto-columns: max-content;
+  }
+  .grid-flow-col {
+    grid-auto-flow: column;
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -316,11 +335,17 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
@@ -333,6 +358,9 @@
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
+  }
+  .gap-\[44px\] {
+    gap: 44px;
   }
   .rounded-\[10px\] {
     border-radius: 10px;
@@ -358,6 +386,9 @@
   }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-blue-700 {
+    background-color: var(--color-blue-700);
   }
   .bg-red-700 {
     background-color: var(--color-red-700);
@@ -401,6 +432,12 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
+  .py-7\.5 {
+    padding-block: calc(var(--spacing) * 7.5);
+  }
   .py-\[0px\] {
     padding-block: 0px;
   }
@@ -418,6 +455,12 @@
   }
   .pt-40 {
     padding-top: calc(var(--spacing) * 40);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-\[16px\] {
+    padding-bottom: 16px;
   }
   .pl-10 {
     padding-left: calc(var(--spacing) * 10);
@@ -447,6 +490,9 @@
   }
   .text-\[17px\] {
     font-size: 17px;
+  }
+  .text-\[22px\] {
+    font-size: 22px;
   }
   .text-\[28px\] {
     font-size: 28px;
@@ -508,6 +554,14 @@
   .leading-\[calc\(100vh-60px\)\] {
     --tw-leading: calc(100vh - 60px);
     line-height: calc(100vh - 60px);
+  }
+  .font-\[600\] {
+    --tw-font-weight: 600;
+    font-weight: 600;
+  }
+  .font-\[700\] {
+    --tw-font-weight: 700;
+    font-weight: 700;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -694,6 +748,21 @@
       padding-inline: 200px;
     }
   }
+  .max-\[1040px\]\:basis-\[32\%\] {
+    @media (width < 1040px) {
+      flex-basis: 32%;
+    }
+  }
+  .max-\[1040px\]\:grid-cols-3 {
+    @media (width < 1040px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .max-\[1040px\]\:grid-cols-6 {
+    @media (width < 1040px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
   .max-\[810px\]\:px-4 {
     @media (width < 810px) {
       padding-inline: calc(var(--spacing) * 4);
@@ -712,6 +781,21 @@
   .max-\[800px\]\:gap-4 {
     @media (width < 800px) {
       gap: calc(var(--spacing) * 4);
+    }
+  }
+  .max-\[700px\]\:grid-cols-1 {
+    @media (width < 700px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .max-\[700px\]\:grid-cols-2 {
+    @media (width < 700px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .max-\[700px\]\:grid-cols-3 {
+    @media (width < 700px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .max-\[600px\]\:mx-5 {
@@ -762,6 +846,11 @@
   .max-\[600px\]\:py-\[30px\] {
     @media (width < 600px) {
       padding-block: 30px;
+    }
+  }
+  .max-\[400px\]\:grid-cols-1 {
+    @media (width < 400px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
   .laptop\:hidden {
